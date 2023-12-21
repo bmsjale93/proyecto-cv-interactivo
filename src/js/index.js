@@ -3,17 +3,16 @@ function showHide() {
   let form = document.getElementById("form-c");
   let arrowIcon = document.getElementById("arrow-icon");
 
-  if (form.classList.contains("show-form")) {
+  if (form.classList.contains("show-form")) {   //Si está activo
     form.classList.remove("show-form");
     arrowIcon.classList.remove("fa-chevron-up");
     arrowIcon.classList.add("fa-chevron-down");
-  } else {
+  } else {                                      //Si está desactivado
     form.classList.add("show-form");
     arrowIcon.classList.remove("fa-chevron-down");
     arrowIcon.classList.add("fa-chevron-up");
   }
 }
-
 
 ///////////// implementación de Dark-mode ///////////////////////////////
 
@@ -74,7 +73,7 @@ function getBotResponse(message) {
   };
 
   // Procesar el mensaje y responder o mostrar opciones FAQ.
-  if (message === "Hola") {
+  if (message === "hola") {
     displayMessage("¡Hola! ¿En qué puedo ayudarte?", "bot");
     showFaqOptions();                                           // Mostrar opciones de preguntas frecuentes.
   } else if (faqResponses[message.toLowerCase()]) {
