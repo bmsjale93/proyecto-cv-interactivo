@@ -1,5 +1,21 @@
-/** Importaciones y Configuraciones Generales **/
+/* Importaciones y Configuraciones Generales */
 @import url('https://fonts.googleapis.com/css?family=Raleway');
+
+:root {
+    --main-font: 'Raleway', sans-serif;
+    --main-color-white: #ffffff;
+    --main-color-black: #000000;
+    --highlight-color: yellow;
+    --header-bg-color: rgb(58, 58, 58);
+    --top-header-bg-color: black;
+    --button-border-color: white;
+    --dark-mode-text-color: #f2f2f2;
+    --dark-mode-bg-color: #000000;
+    --dark-mode-border-color: #9AEE86;
+    --dark-mode-header-color: #9AEE86;
+    --dark-mode-icon-color: #9AEE86;
+    --chatbot-bg-color: #1a1a1a;
+}
 
 html {
     scroll-behavior: smooth;
@@ -7,14 +23,13 @@ html {
 
 body {
     margin: 0;
-    font-family: 'Raleway', sans-serif;
+    font-family: var(--main-font);
     font-size: 16px;
     line-height: 1.8em;
 }
 
-/* Estilos Generales */
 h1, h2, h3, h4 {
-    font-family: 'Raleway', sans-serif;
+    font-family: var(--main-font);
     line-height: 1.5em;
     font-weight: bolder;
 }
@@ -24,9 +39,9 @@ h2 { font-size: 24px; }
 h3 { font-size: 18px; }
 h4 { font-size: 16px; }
 
-/* Top Header */
+/* Estilos Generales y Componentes */
 .top-header {
-    background-color: black;
+    background-color: var(--top-header-bg-color);
     display: flex;
     justify-content: center;
     height: 50px;
@@ -47,33 +62,33 @@ h4 { font-size: 16px; }
 }
 
 .top-header-col1 p, .button-top-header {
-    color: white;
+    color: var(--main-color-white);
     margin: 0;
     font-size: 14px;
 }
 
 .button-top-header {
     background-color: transparent;
-    border: 1px solid white;
+    border: 1px solid var(--main-color-white);
     padding: 2px 10px;
     margin: 0 5px;
 }
 
 .button-top-header:hover {
-    background-color: yellow;
-    border-color: yellow;
-    color: black;
+    background-color: var(--highlight-color);
+    border-color: var(--highlight-color);
+    color: var(--main-color-black);
 }
 
-/* Header */
 header {
-    background-color: rgb(58, 58, 58);
+    background-color: var(--header-bg-color);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 75px;
 }
 
+/* Estilos de Navegación y Menú */
 .header-inner {
     display: flex;
     justify-content: space-between;
@@ -95,13 +110,13 @@ nav, .menu {
 }
 
 .menu a {
-    color: white;
+    color: var(--main-color-white);
     margin: 0 10px;
     text-decoration: none;
 }
 
 .menu a:hover {
-    color: yellow;
+    color: var(--highlight-color);
     text-decoration: underline;
 }
 
@@ -145,9 +160,9 @@ nav, .menu {
 }
 
 .contact-form {
-    background-color: white;
+    background-color: var(--main-color-white);
     padding: 20px;
-    border: 2px solid black;
+    border: 2px solid var(--main-color-black);
     border-radius: 10px;
 }
 
@@ -166,7 +181,7 @@ nav, .menu {
 
 .contact-form .field input, .contact-form textarea {
     flex: 1;
-    border: 1px solid black;
+    border: 1px solid var(--main-color-black);
     padding: 1rem;
 }
 
@@ -179,55 +194,29 @@ nav, .menu {
     font-weight: bold;
     padding: 10px 10px;
     margin-top: 10px;
-    border: 1px solid black;
+    border: 1px solid var(--main-color-black);
     border-radius: 10px;
     width: 100%;
-    background-color: black;
-    color: white;
+    background-color: var(--main-color-black);
+    color: var(--main-color-white);
 }
 
 .contact-form button:hover {
-    background-color: yellow;
-    color: black;
-}
-
-/* Proyectos y Curriculum */
-.proyecto, .bloque-experiencia, .bloque-formacion {
-    padding: 20px;
-}
-
-.proyecto-item, .skills-list li, .tecno-list li, .interes-list li, .idiomas-list li {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.proyecto-item i {
-    margin-right: 10px;
-    font-size: 1.5em;
-}
-
-.proyecto-item a {
-    text-decoration: none;
-    color: black;
-    font-size: 1.2em;
-}
-
-.proyecto-item a:hover {
-    text-decoration: underline;
+    background-color: var(--highlight-color);
+    color: var(--main-color-black);
 }
 
 /* Footer */
 footer {
     padding: 1em 1.5em;
-    background: black;
-    color: white;
+    background: var(--main-color-black);
+    color: var(--main-color-white);
     text-align: right;
 }
 
 /* Estilos para FontAwesome Icons */
 .fa-brands, .fa-regular, .fa-solid {
-    border: 1px solid black;
+    border: 1px solid var(--main-color-black);
     border-radius: 50%;
     font-size: 1.6em;
     width: 1.6em;
@@ -238,103 +227,47 @@ footer {
 }
 
 a .fa-brands, a .fa-regular, a .fa-solid {
-    color: black;
+    color: var(--main-color-black);
 }
 
 .fa-brands:hover, .fa-regular:hover, .fa-solid:hover {
-    background-color: yellow;
-    color: black;
-}
-
-/* Botones */
-.button span {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
-}
-
-.button span:after {
-    content: '\00bb';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.5s;
-}
-
-.button:hover span {
-    padding-right: 25px;
-}
-
-.button:hover span:after {
-    opacity: 1;
-    right: 0;
+    background-color: var(--highlight-color);
+    color: var(--main-color-black);
 }
 
 /* Media Queries para pantallas pequeñas (dispositivos móviles) */
 @media only screen and (max-width: 768px) {
-    .top-header-inner, .header-inner {
+    /* Estilos para top-header */
+    .top-header-inner {
         flex-direction: column;
         text-align: center;
-    }
-
-    .top-header-col1, .top-header-col2,
-    .menu, .dark-mode-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .button-top-header {
-        margin: 5px 0;
-        font-size: 12px;
-    }
-
-    .header-inner {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .menu li {
-        margin-bottom: 10px;
-    }
-
-    .dark-mode-container {
-        margin-top: 10px;
-    }
-
-    img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    .two-columns-container, .fila-cv {
-        flex-wrap: wrap;
-    }
-
-    .column, .columna-cv {
-        width: 100%;
         padding: 10px;
     }
 
-    .column-left img {
-        border-radius: 0;
+    .top-header-col1, .top-header-col2 {
+        margin-bottom: 10px;
     }
 
-    .column-right {
-        align-items: center;
+    .top-header-col1 p, .button-top-header {
+        font-size: 12px;
     }
 
-    .download-cv-btn {
-        width: 100%;
+    /* Estilos para header-inner */
+    .header-inner {
+        flex-direction: column;
     }
 
-    .columna-proyectos {
-        padding: 20px;
+    nav .menu {
+        flex-direction: column;
     }
 
-    .proyecto {
-        width: 100%;
+    .menu a {
+        margin: 5px 0;
+    }
+
+    /* Estilos para proyectos */
+    .proyectos .columna-proyectos {
+        flex-direction: column;
     }
 
     .proyecto-item {
@@ -346,29 +279,14 @@ a .fa-brands, a .fa-regular, a .fa-solid {
         margin-bottom: 5px;
     }
 
-    .proyecto-item a {
-        font-size: 1em; 
-    }
-
-    .fila-cv {
-        flex-direction: column;
-        padding: 20px;
-    }
-
-    .columna-cv {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
+    /* Estilos para footer */
     footer {
-        padding: 1em;
         text-align: center;
+        padding: 20px;
     }
 
     footer a, footer p {
         font-size: 0.9em;
-        display: block;
-        margin-bottom: 10px;
     }
 }
 
@@ -378,391 +296,7 @@ a .fa-brands, a .fa-regular, a .fa-solid {
         font-size: calc(1em + 1vw);
     }
 
-    .button-top-header, .download-cv-btn, .button-enviar {
-        min-width: 44px;
-        min-height: 44px;
-        padding: 10px;
+    .top-header-col1 p, .button-top-header {
+        font-size: 11px;
     }
-
-    .contact-form .field label {
-        flex: 0 0 100%;
-    }
-
-    .contact-form .field input, .contact-form textarea {
-        width: 100%;
-    }
-}
-
-
-/* Estilos para el chatbot */
-#start-chatbot-btn {
-    position: fixed;
-    font-size: 20px;
-    font-weight: bold;
-    bottom: 10px;
-    right: 10px;
-    padding: 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-#start-chatbot-btn:hover {
-    background-color: #45a049;
-}
-
-.chatbot-header {
-    background-color: #333;
-    color: white;
-    padding: 5px;
-    text-align: right;
-}
-
-.chatbot-header button {
-    background-color: transparent;
-    border: none;
-    color: white;
-    cursor: pointer;
-}
-
-.chatbot {
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    border: 2px solid #666;
-    background-color: white;
-    width: 300px;
-    z-index: 1000;
-}
-
-.chatbot-content {
-    padding: 10px;
-}
-
-.chatbot-content .button-chatbot {
-    color: black;
-}
-
-.chatbot-messages {
-    height: 400px;
-    overflow-y: auto;
-    margin-bottom: 10px;
-}
-
-.chatbot input[type="text"] {
-    width: calc(100% - 60px);
-    padding: 5px;
-}
-
-.chatbot button {
-    width: 50px;
-}
-
-/* Mensajes del chatbot */
-.message {
-    padding: 5px;
-    margin: 5px 0;
-}
-
-.user-message {
-    text-align: right;
-    background-color: #e9e9e9;
-}
-
-.bot-message {
-    text-align: left;
-    background-color: #d1d1d1;
-}
-
-.faq-options button {
-    display: block;
-    width: 100%;
-    padding: 5px;
-    margin: 5px 0;
-    background-color: #f0f0f0;
-    border: 1px solid #ddd;
-    cursor: pointer;
-}
-
-.faq-options button:hover {
-    background-color: #e0e0e0;
-}
-
-
-/* Modo Oscuro */
-.darkModeSwitch {
-    background: #3494b1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    padding: 5px;
-    border-radius: 20px;
-    cursor: pointer;
-    position: relative;
-    width: 60px;
-    height: 30px;
-}
-
-.darkModeSwitch i {
-    color: white;
-    font-size: 16px;
-}
-
-.darkModeSwitch span {
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    display: block;
-    color: #fff;
-    background: none;
-}
-
-.darkModeSwitch::after {
-    display: block;
-    background: #fffbf5;
-    width: 2.0rem;
-    height: 2.0rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: unset;
-    border-radius: 2rem;
-    transition: all .5s ease;
-    box-shadow: 0 0 2px 2px rgba(0, 0, 0, .5);
-    content: "";
-}
-
-.darkModeSwitch.active {
-    background: #fdd384;
-}
-
-.darkModeSwitch.active::after {
-    left: unset;
-    right: 0;
-}
-
-.contact-form-dark {
-    background-color: #9AEE86;
-    color: black;
-}
-
-.input-f-dark {
-    background-color: transparent;
-    border: 2px solid black;
-    color: black;
-}
-
-.textarea-f-dark {
-    background-color: transparent;
-    color: black;
-}
-
-.dark-mode {
-    background-color: #000000;
-    color: #f2f2f2;
-    --main-text-color: #ffffff;
-    --main-border-color: #9AEE86;
-    --main-background-color: #000000;
-    --main-header-color: #9AEE86;
-    --main-icon-color: #9AEE86;
-    --main-link-hover-color: #9AEE86;
-}
-
-.dark-mode h1 {
-    color: var(--main-header-color);
-}
-
-.dark-mode legend {
-    background-color: var(--main-header-color);
-    color: black;
-}
-
-.dark-mode body, .dark-mode p, .dark-mode h2, .dark-mode h3, .dark-mode h4 {
-    color: var(--main-text-color);
-}
-
-.dark-mode .border-color-change {
-    border-color: var(--main-border-color);
-}
-
-.dark-mode .download-cv-btn {
-    background-color: #9AEE86;
-    color: black;
-}
-
-.dark-mode .subcolumna-proy,
-.dark-mode .columna-cv.experiencia,
-.dark-mode .columna-formacion,
-.dark-mode .subcolumna-skills,
-.dark-mode .subcolumna-tecnologias,
-.dark-mode .subcolumna-interes, 
-.dark-mode .subcolumna-idiomas {
-    border: 2px solid #9AEE86;
-}
-
-.dark-mode .proyecto-item i,
-.dark-mode .proyecto-item a,
-.dark-mode .social-links a .fa-brands,
-.dark-mode .social-links a .fa-regular,
-.dark-mode .social-links a .fa-solid {
-    color: var(--main-icon-color);
-    border-color: var(--main-icon-color);
-}
-
-.dark-mode .proyecto-item a:hover,
-.dark-mode .proyecto-item i:hover,
-.dark-mode .menu a:hover,
-.dark-mode .button-top-header:hover {
-    background-color: #9AEE86;
-    color: black;
-}
-
-.dark-mode .social-links a .fa-brands,
-.dark-mode .social-links a .fa-regular,
-.dark-mode .social-links a .fa-solid {
-    background-color: transparent;
-}
-
-.dark-mode .social-links a .fa-brands:hover,
-.dark-mode .social-links a .fa-regular:hover,
-.dark-mode .social-links a .fa-solid:hover {
-    background-color: #9AEE86;
-    color: black;
-}
-
-/* Estilo del botón en modo oscuro */
-.dark-mode .button-enviar {
-    background-color: transparent;
-    color: black;
-    border: 2px solid black;
-}
-
-.dark-mode .button-enviar:hover {
-    background-color: black;
-    color: #9AEE86;
-    border: 2px solid black;
-}
-
-/* Estilo del footer en modo oscuro */
-.dark-mode footer {
-    background-color: #9AEE86;
-}
-
-.dark-mode footer a,
-.dark-mode footer p {
-    color: black;
-}
-
-/* Estilos de la barra de desplazamiento en modo oscuro para WebKit browsers */
-.dark-mode::-webkit-scrollbar {
-    width: 12px;
-}
-
-.dark-mode::-webkit-scrollbar-track {
-    background: black;
-    border: 2px solid #9AEE86;
-}
-
-.dark-mode::-webkit-scrollbar-thumb {
-    background-color: #9AEE86;
-    border: 3px solid #9AEE86;
-}
-
-/* Estilos existentes para mensajes del chatbot */
-.message {
-    padding: 5px;
-    margin: 5px 0;
-}
-
-.user-message {
-    text-align: right;
-    background-color: #e9e9e9;
-}
-
-.bot-message {
-    text-align: left;
-    background-color: #d1d1d1;
-}
-
-.faq-options button {
-    display: block;
-    width: 100%;
-    padding: 5px;
-    margin: 5px 0;
-    background-color: #f0f0f0;
-    border: 1px solid #ddd;
-    cursor: pointer;
-}
-
-.faq-options button:hover {
-    background-color: #e0e0e0;
-}
-
-/* Estilos para modo oscuro para Chat Bot */
-.dark-mode .message {
-    background-color: black;
-    color: var(--main-text-color);
-}
-
-.dark-mode .user-message {
-    background-color: #666;
-}
-
-.dark-mode .bot-message {
-    background-color: #777;
-}
-
-.dark-mode .faq-options button {
-    background-color: black;
-    border-color: var(--main-border-color);
-    color: var(--main-text-color);
-}
-
-.dark-mode .faq-options button:hover {
-    background-color: var(--main-icon-color);
-    color: black;
-}
-
-.dark-mode .chatbot {
-    background-color: #1a1a1a;
-    color: #f1f1f1;
-}
-
-.dark-mode .chatbot-header {
-    background-color: #333;
-    color: #fff;
-}
-
-.dark-mode .chatbot-messages {
-    background-color: #2a2a2a;
-    color: #ddd;
-}
-
-.dark-mode .chatbot-content input[type="text"] {
-    background-color: #333;
-    color: #fff;
-    border-color: #444;
-}
-
-.dark-mode .chatbot-content button {
-    background-color: #4CAF50;
-    color: #fff;
-    border-color: #4CAF50;
-}
-
-.dark-mode .faq-options button {
-    background-color: #333;
-    color: #fff;
-}
-
-.dark-mode #start-chatbot-btn {
-    background-color: #4CAF50;
-    color: #fff;
-}
-
-.dark-mode .chatbot-content button {
-    background-color: #000;
 }

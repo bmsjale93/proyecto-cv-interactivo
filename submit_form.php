@@ -13,19 +13,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Datos guardados exitosamente";
 
         // Preparar el correo electrónico
-        $to = 'bmsjale@gmail.com'; // Cambia esto por tu correo electrónico
+        $to = 'bmsjale@gmail.com';
         $subject = 'Nuevo mensaje del formulario de contacto';
         $message = "Has recibido un nuevo mensaje:\n\n";
         $message .= "Nombre: " . $nombre . "\n";
         $message .= "Email: " . $email . "\n";
         $message .= "Mensaje: " . $mensaje . "\n";
 
-        // Encabezados adicionales
-        $headers = 'From: bmsjale@gmail.com' . "\r\n"; // Cambia esto por tu dirección de correo del remitente
+        // Encabezados
+        $headers = 'From: bmsjale@gmail.com' . "\r\n";
         $headers .= 'Reply-To: ' . $email . "\r\n";
         $headers .= 'X-Mailer: PHP/' . phpversion();
 
-        // Enviar el correo electrónico
+        // Enviamos el correo electrónico
         mail($to, $subject, $message, $headers);
     } else {
         echo "Error: " . $stmt->error;

@@ -12,13 +12,13 @@ if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
-// Asegúrate de que el método de solicitud sea POST
+// El método de solicitud debe ser POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Recibe los datos del usuario
+    // Recibimos los datos del usuario
     $session_id = $_POST['session_id'];
     $consent = $_POST['consent'] ? 1 : 0; // Convertir a booleano
 
-    // Preparar la consulta SQL
+    // Preparamos la consulta SQL
     $stmt = $conn->prepare("INSERT INTO cookies (session_id, consent) VALUES (?, ?)");
     $stmt->bind_param("si", $session_id, $consent);
 
