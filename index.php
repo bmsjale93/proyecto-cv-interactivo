@@ -100,7 +100,7 @@
                 </div>
             </div>
         </section>
-        <div class="proyectos">
+        <div class="proyectos" id="proyectos">
             <div class="columna-proyectos">
                 <legend class="legend-proyectos">Últimos Proyectos</legend>
                 <div class="subcolumna-proy">
@@ -151,7 +151,7 @@
                 </div>
             </div>
         </div>
-        <div class="curriculum">
+        <div class="curriculum" id="curriculum">
             <div class="fila-cv">
                 <div class="columna-cv experiencia">
                     <legend>Experiencia</legend>
